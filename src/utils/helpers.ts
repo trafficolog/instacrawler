@@ -56,4 +56,8 @@ export async function retry<T>(
   }
   
   throw lastError || new Error('Все попытки выполнения операции завершились неудачно');
+}
+
+export function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 } 
